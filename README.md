@@ -1,5 +1,4 @@
-Planet
-------
+# Planet Debian Indonesia
 
 Planet is a flexible feed aggregator. It downloads news feeds published by
 web sites and aggregates their content together into a single combined feed,
