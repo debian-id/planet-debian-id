@@ -1,0 +1,131 @@
+
+@import url("debian.css");
+
+#sidebar {
+	border-left:1px solid #d3d6df;
+	margin:0;
+	margin-left:1em;
+	padding:0 0 0 1em;
+	/* TODO - actually we want 11em of 100% font size, this is a dirty workaround */
+	width:15em;
+	font-size: 0.75em;
+	line-height: 1.5em;
+	position: absolute;
+	top: 10em;
+	right: 10px;
+}
+#sidebar h1 {
+	font-size: 1em;
+	line-height: 1.5em;
+}
+#content {
+	margin-right: 14em;
+	margin-top: 1em;
+}
+#content img {
+	max-width: 100%;
+	height: auto;
+}
+
+img.face {
+	float: right;
+	margin-top: -20px;
+}
+.channel {
+	background-color: #f2f3f7;
+	border:1px solid #e2e3e7;
+	overflow: visible;
+	margin-bottom: 1.5em;
+}
+h2.planet-title {
+	font-family:monospace;
+//	text-transform: uppercase;
+        font-variant: small-caps;
+	letter-spacing: 0.2em;
+	background-color: #c70036;
+	color: white;
+	margin:0;
+	padding: 0.5em;
+	font-size: 1em;
+	font-weight: bold;
+	line-height: 1.5em;
+	border-bottom: 1px solid #bbb;
+}
+div.entry div.content {
+	margin: 0 0.5em;
+	border-bottom: 1px solid #bbb;
+}
+h2.planet-title a {
+	color: white;
+	text-decoration: none;
+}
+h2.planet-title a:hover {
+	color: white;
+	text-decoration: underline;
+}
+h3.entry-title {
+	padding: 0 0 0 0.25em;
+	font-size: 1.4em;
+	color: #c70036;
+	line-height: 1.0714286;
+	font-size: 1.4em;
+	font-weight: normal;
+	line-height: 1.0714286;
+	margin: 1.0714286em 0 1.0714286em 0;
+}
+h3.entry-title a {
+	color: #c70036;
+	text-decoration: none;
+}
+h3.entry-title a:hover {
+	text-decoration: underline;
+}
+p.date {
+	border-top: 1px solid  white;
+	font-size: 0.75em;
+	line-height: 2em;
+	border-top: 1px solid  white;
+	margin-top:0;
+	padding: 0.5em 0.5em 0 0.5em;
+}
+
+table {
+/*	border-bottom: 1px solid #a9abb3;
+	border-top: 1px solid #a9abb3; */
+	border-bottom: 0.15em solid #666;
+	border-top: 0.15em solid #666;
+	width: auto;
+	font-size: 0.75em;
+	line-height: 2em;
+	margin-bottom: 4em;
+	margin-top: -0.169em;
+}
+table tr {
+	width: 100%;
+}
+table th {
+	padding-right: 1.5em;
+}
+table td {
+	background-image: url(Pics/greydot.png);
+	background-position: top left;
+	background-repeat: repeat-x;
+}
+table > td:fist-child {
+	background-image: none;
+}
+
+#outer {
+	margin-left: 10px;
+}
+
+/* Make pre's wrap to the window */
+pre { white-space: normal ! important; }
+pre { white-space: -moz-pre-wrap ! important; }
+pre { white-space: pre-wrap ! important; }
+code { white-space: normal ! important; }
+code { white-space: -moz-pre-wrap ! important; }
+code { white-space: pre-wrap ! important; }
+tt { white-space: normal ! important; }
+tt { white-space: -moz-pre-wrap ! important; }
+tt { white-space: pre-wrap ! important; }

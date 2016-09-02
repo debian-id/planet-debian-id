@@ -1,0 +1,179 @@
+<!--?xml version="1.0" encoding="utf-8"?-->
+<!--
+## This theme is an Planet Debian theme convert from 
+## Django template engine to tmpl.
+## By Izharul Haq <atoz.chevara@yahoo.com>, 2016
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+  <title><TMPL_VAR name></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="<TMPL_VAR generator ESCAPE="HTML">">
+  <link rel="stylesheet" href="planet.css" type="text/css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="rss10.xml" rel="alternate" type="application/rss+xml" title="RSS 1.0 Feed">
+  <link href="rss20.xml" rel="alternate" type="application/rss+xml" title="RSS 2.0 Feed">
+  <!--
+  <link href="atom.xml" rel="alternate" type="application/atom+xml" title="Atom Feed">
+  -->
+  <TMPL_IF feedtype>
+  <link rel="alternate" href="<TMPL_VAR feed ESCAPE="HTML">" title="<TMPL_VAR channel_title_plain ESCAPE="HTML">" type="application/<TMPL_VAR feedtype>+xml">
+  </TMPL_IF>
+
+
+  <script type="text/javascript" src="hide.js"></script>
+  <script type="text/javascript">
+  <!--
+	 window.onload=hideHosts;
+	-->
+  </script>
+ </head>
+
+
+<body>
+<!-- Header -->
+  <div id="header">
+   <div id="upperheader">
+    <div id="logo">
+		<a href="http://www.debian.org/" title="Debian Home"><img src="images/openlogo-50.png" alt="Debian" height="61" width="50"></a> 
+    </div><!-- end logo -->
+    <p class="section"><a href="http://planet.debian.org/">planet</a></p>
+   </div><!-- end upperheader -->
+   <div id="navbar">
+    <p class="hidecss"><a href="#inner">Skip Quicknav</a></p>
+    <ul>
+     <li><a href="http://www.debian.org/intro/about">About Debian</a></li>
+     <li><a href="http://www.debian.org/distrib/">Getting Debian</a></li>
+     <li><a href="http://www.debian.org/support">Support</a></li>
+     <li><a href="http://www.debian.org/devel/">Developers'&nbsp;Corner</a></li>
+    </ul>
+   </div><!-- end navbar -->
+  <p id="breadcrumbs"><a href="http://planet.debian.org/">Planet Debian</a></p>
+  </div><!-- end header -->
+   <div id="content">
+<!-- /Header -->
+<!--h1><TMPL_VAR name></h1-->
+<TMPL_VAR admin>
+
+<TMPL_LOOP Items>
+<TMPL_IF new_date>
+<TMPL_UNLESS __FIRST__>
+### End <div class="channel">
+</div>
+<!--
+### End <div class="day">
+</div>
+-->
+### End <div>
+</div>
+</TMPL_UNLESS>
+<!--div class="day"-->
+<div>
+    <h1><TMPL_VAR new_date></h1>
+</TMPL_IF>
+
+<TMPL_IF new_channel>
+<TMPL_UNLESS new_date>
+### End <div class="channel">
+</div>
+</TMPL_UNLESS>
+    <div class="channel">
+
+
+     <a href="<TMPL_VAR channel_link ESCAPE="HTML">">
+<TMPL_IF channel_face>
+      <img class="face" src="heads/<TMPL_VAR channel_face ESCAPE="HTML">" alt="hackergotchi for <TMPL_VAR channel_name>" height="<TMPL_VAR channel_faceheight ESCAPE="HTML">" width="<TMPL_VAR channel_facewidth ESCAPE="HTML">">
+     </a>
+<TMPL_ELSE>
+     <img class="face" src="heads/nobody.png" alt="">
+</TMPL_IF>
+</TMPL_IF>
+
+     <h2 class="planet-title">
+      <a href="<TMPL_VAR channel_link ESCAPE="HTML">" title="Planet Debian on <TMPL_VAR channel_title_plain ESCAPE="HTML">"><TMPL_VAR channel_name></a>
+       <script type="text/javascript">
+	  <!--
+		 document.write( "<a href=\"#\" id=\"<TMPL_VAR id>_hide\" onClick=\"exclude( '<TMPL_VAR id>' ); hideHosts(); return false;\"><img src=\"images/minus-8.png\" style=\"border: none;\" title=\"Hide Author\" alt=\"Hide Author\" height=\"8\" width=\"8\"><\/a> <a href=\"#\" id=\"<TMPL_VAR id>_show\"  style=\"display:none;\" onClick=\"show( '<TMPL_VAR id>' );  return false;\"><img src=\"images/plus-8.png\" style=\"border: none;\" title=\"Show Author\" alt=\"Show Author\" height=\"8\" width=\"8\"><\/a>" );
+	  -->
+       </script>
+     </h2>
+<!--
+     <div class="entry" id="<TMPL_VAR id>"<TMPL_IF channel_language> lang="<TMPL_VAR channel_language>"</TMPL_IF>>
+-->
+     <div id="<TMPL_VAR id>" class="<TMPL_VAR id>"<TMPL_IF channel_language> lang="<TMPL_VAR channel_language>"</TMPL_IF>>
+      <div class="entry">
+       <TMPL_IF title>
+       <h3 class="entry-title">
+        <a href="<TMPL_VAR link ESCAPE="HTML">"><TMPL_VAR title></a>
+       </h3>
+       </TMPL_IF>
+<!--
+      <div class="entry">
+-->
+       <div class="content"<TMPL_IF content_language> lang="<TMPL_VAR content_language>"</TMPL_IF>>
+       <TMPL_VAR content>
+</div>
+
+<p class="date">
+<a href="<TMPL_VAR link ESCAPE="HTML">"><TMPL_IF author>by <TMPL_VAR author ESCAPE="HTML"> at </TMPL_IF><TMPL_VAR date><TMPL_IF category> under <TMPL_VAR category></TMPL_IF></a>
+</p>
+</div>
+</div>
+
+<TMPL_IF __LAST__>
+### End <div class="channel">
+</div>
+### End <div class="day">
+</div>
+</TMPL_IF>
+</TMPL_LOOP>
+
+
+   <div id="sidebar">
+<!--    
+     <h1>Search</h1>
+     <form method="GET" action="http://planet-search.debian.org/cgi-bin/search.cgi">
+      <input name="terms" type="text">
+     </form>
+    <hr>
+-->    
+    <p>
+     A complete feed is available in any of your favourite syndication formats linked by the buttons below.
+    </p>
+    <p>
+     <a href="http://planet.debian.or.id/rss10.xml"><img class="button" src="images/rss10.png" alt="[RSS 1.0 Feed]" height="15" width="80"></a>
+     <a href="http://planet.debian.or.id/rss20.xml"><img class="button" src="images/rss20.png" alt="[RSS 2.0 Feed]" height="15" width="80"></a>
+     <a href="http://planet.debian.or.id/atom.xml"><img class="button" src="images/atom.png" alt="[Atom Feed]" height="15" width="80"></a>
+     <a href="http://planet.debian.or.id/foafroll.xml"><img class="button" src="images/foaf.png" alt="[FOAF Subscriptions]" height="15" width="80"></a>
+     <a href="http://planet.debian.or.id/opml.xml"><img class="button" src="images/opml.png" alt="[OPML Subscriptions]" height="15" width="80"></a>
+     <a href="http://www.catb.org/hacker-emblem/"><img class="button" src="images/hacker.png" alt="[Hacker]" height="15" width="80"></a>
+     <a href="http://www.intertwingly.net/code/venus/"><img class="button" src="images/planet.png" alt="[Planet]" height="15" width="80"></a>
+    </p>
+   <p>
+    Last updated: <TMPL_VAR date><br>All times are UTC.<br>
+    Report Bugs: <a href="https://github.com/debian-id/planet-debian-id/issues">Debian Indonesian Planet Maintainers</a>
+   </p>
+   <h2>Planetarium</h2>
+   <ul>
+    <li><a href="http://planet.debian.org/">Planet Debian</a></li>
+    <li><a href="http://planet.debian.org/deriv/">Planet Debian Derivatives</a></li>
+    <li><a href="http://planet.debian.org/es/">Planet Debian Spanish</a></li>
+    <li><a href="http://planet.debian.org/fr/">Planet Debian French</a></li>
+
+   </ul>
+   <div id="unhide-all" style="display:none;">
+    <h2>Hidden Feeds</h2>
+    <p>You currently have hidden entries. <a href="#" onclick="excludeNone(); return false">Show all</a></p>
+   </div>
+   <h2>Subscriptions</h2>
+   <ul>
+   <TMPL_LOOP Channels>
+   <li>
+   <a href="<TMPL_VAR url ESCAPE="HTML">" title="subscribe"><img src="common/images/feed-icon-10x10.png" alt="(feed)"></a> <a <TMPL_IF link>href="<TMPL_VAR link ESCAPE="HTML">" </TMPL_IF><TMPL_IF message>class="message" title="<TMPL_VAR message ESCAPE="HTML">"</TMPL_IF><TMPL_UNLESS message>title="<TMPL_VAR title_plain ESCAPE="HTML">"</TMPL_UNLESS>><TMPL_VAR name></a>
+   </li>
+   </TMPL_LOOP>
+   </ul>
+</div>
+</body>
+
+</html>
