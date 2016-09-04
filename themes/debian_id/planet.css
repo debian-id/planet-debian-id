@@ -1,5 +1,7 @@
 
 @import url("debian.css");
+@import url("syntax.css");
+@import url("alert.css");
 
 #sidebar {
 	border-left:1px solid #d3d6df;
